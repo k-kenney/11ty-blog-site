@@ -8,15 +8,7 @@ layout: 'base.njk'
 
 <ul role="list" class="articles__list flow">
   {%- for post in collections.post | reverse -%}
-  <li>
-    <aricle class="snippet">
-      <img src="{{ post.data.image }}" alt="{{ post.data.imgAlt }}" class="snippet_img">
-      <h3 class="snippet_title">{{ post.data.title }}</h3>
-      <p class="snippet_meta">by <span>{{ post.data.author }}</span>on <span>{{ post.date | postDate }}</span></p>
-      <p class="snippet_body">{{ post.data.description }}</p>
-      <a href="{{ post.url }}" class="btn btn--primary">Continue Reading</a>
-    </aricle>
-  </li>
+    {% include 'article-snippet.njk' %}
   {%- endfor -%}
  </ul>
 
